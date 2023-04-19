@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b4xgd7l4toma"]
+[gd_scene load_steps=2 format=3 uid="uid://b4xgd7l4toma"]
+
+[ext_resource type="Theme" uid="uid://baou3jew076rd" path="res://common_assets/themes/gg_main_theme.tres" id="1_1fim8"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1fim8")
 
 [node name="Main Menu Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -39,18 +42,19 @@ size_flags_vertical = 3
 [node name="Game Title" type="Label" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Title Box"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("1_1fim8")
 theme_override_font_sizes/font_size = 55
-text = "Greenleaf Galactic Immersive Simmulator"
+text = "Greenleaf Galactic Immersive Simulator"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
 [node name="Game Subtitle" type="Label" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Title Box"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("1_1fim8")
 theme_override_font_sizes/font_size = 40
 text = "A Working Title"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Options Spacing" type="HBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box"]
 layout_mode = 2

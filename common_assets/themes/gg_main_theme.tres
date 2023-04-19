@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://baou3jew076rd"]
+
+[ext_resource type="FontFile" uid="uid://bousw618e3xbx" path="res://common_assets/fonts/toxigenesis bd.otf" id="1_ux8pn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uuh7p"]
+resource_name = "hover_button"
+bg_color = Color(0.365834, 0.692841, 0.263262, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hlkv"]
+resource_name = "normal_button"
+bg_color = Color(0, 0.392989, 0.118893, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvanm"]
+resource_name = "pressed_button"
+bg_color = Color(0.588235, 0.482353, 0.168627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jky5s"]
+bg_color = Color(0, 0.392989, 0.118893, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us3s5"]
+bg_color = Color(0, 0.145098, 0.0235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxmlv"]
+bg_color = Color(0, 0.392989, 0.118893, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgyj6"]
+bg_color = Color(0, 0.392989, 0.118893, 1)
+
+[resource]
+default_font = ExtResource("1_ux8pn")
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_uuh7p")
+Button/styles/normal = SubResource("StyleBoxFlat_4hlkv")
+Button/styles/pressed = SubResource("StyleBoxFlat_cvanm")
+HSlider/styles/slider = SubResource("StyleBoxFlat_jky5s")
+Panel/styles/panel = SubResource("StyleBoxFlat_us3s5")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_jxmlv")
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_xgyj6")
