@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4xgd7l4toma"]
+[gd_scene load_steps=3 format=3 uid="uid://b4xgd7l4toma"]
 
 [ext_resource type="Theme" uid="uid://baou3jew076rd" path="res://common_assets/themes/gg_main_theme.tres" id="1_1fim8"]
+[ext_resource type="Texture2D" uid="uid://bqua8a3384cst" path="res://common_assets/logos/GreenGal LogoAnimation Trans HD.png" id="2_3bf5w"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -33,63 +34,85 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Main Menu Box" type="VBoxContainer" parent="Main Menu Background/Main Menu Margin"]
+z_index = 1
 layout_mode = 2
 
-[node name="Title Box" type="VBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box"]
+[node name="Title Screen" type="VBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 
-[node name="Game Title" type="Label" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Title Box"]
+[node name="Game Title" type="Label" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Title Screen"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_1fim8")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 78
 text = "Greenleaf Galactic Immersive Simulator"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Game Subtitle" type="Label" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Title Box"]
+[node name="Game Subtitle" type="Label" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Title Screen"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_1fim8")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "A Working Title"
 horizontal_alignment = 1
 
-[node name="Options Spacing" type="HBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box"]
+[node name="Main Menu" type="HBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Blank" type="Control" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Options Spacing"]
+[node name="Left Flank" type="VBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+alignment = 2
 
-[node name="Options Box" type="VBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Options Spacing"]
+[node name="Options Box" type="VBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 25
 
-[node name="New Game" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Options Spacing/Options Box"]
+[node name="New Game" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu/Options Box"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
 text = "New Game"
 
-[node name="Load" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Options Spacing/Options Box"]
+[node name="Load" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu/Options Box"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
 text = "Load"
 
-[node name="Settings" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Options Spacing/Options Box"]
+[node name="Settings" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu/Options Box"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
 text = "Settings"
 
-[node name="Quit" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Options Spacing/Options Box"]
+[node name="Quit" type="Button" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu/Options Box"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
-[node name="Blank2" type="Control" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Options Spacing"]
+[node name="Right Flank" type="VBoxContainer" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+alignment = 2
+
+[node name="Version" type="Label" parent="Main Menu Background/Main Menu Margin/Main Menu Box/Main Menu/Right Flank"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Version 0.nothing"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3bf5w")
