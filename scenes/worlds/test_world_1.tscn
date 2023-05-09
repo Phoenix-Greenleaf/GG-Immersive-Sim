@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://v8gf48i0ss7i"]
+
+[sub_resource type="VoxelGeneratorFlat" id="VoxelGeneratorFlat_4oij0"]
+
+[sub_resource type="VoxelMesherTransvoxel" id="VoxelMesherTransvoxel_4k0hm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="VoxelLodTerrain" type="VoxelLodTerrain" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0677445, 0)
+generator = SubResource("VoxelGeneratorFlat_4oij0")
+mesher = SubResource("VoxelMesherTransvoxel_4k0hm")
