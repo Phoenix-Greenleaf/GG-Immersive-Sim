@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://v8gf48i0ss7i"]
+[gd_scene load_steps=6 format=3 uid="uid://v8gf48i0ss7i"]
+
+[ext_resource type="PackedScene" uid="uid://dyokfpe4uj31h" path="res://scenes/player/player.tscn" id="1_dsmai"]
 
 [sub_resource type="VoxelGeneratorFlat" id="VoxelGeneratorFlat_4oij0"]
 
 [sub_resource type="VoxelMesherTransvoxel" id="VoxelMesherTransvoxel_4k0hm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6qfh0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7rxt"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -10,3 +16,31 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0677445, 0)
 generator = SubResource("VoxelGeneratorFlat_4oij0")
 mesher = SubResource("VoxelMesherTransvoxel_4k0hm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.518206, 0.855256, 0, -0.855256, 0.518206, 0, 3.4295, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_dsmai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Test Shape" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4184, 1.24388, 0.464753)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test Shape"]
+mesh = SubResource("BoxMesh_6qfh0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test Shape"]
+shape = SubResource("BoxShape3D_v7rxt")
+
+[node name="Test Shape2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4184, 3.42251, 5.00258)
+mass = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test Shape2"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("BoxMesh_6qfh0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test Shape2"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_v7rxt")

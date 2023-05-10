@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyokfpe4uj31h"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_pnjty"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nlx8j"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qvie4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfgjw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_54in8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icpc8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 80.0
+physics_material_override = SubResource("PhysicsMaterial_nlx8j")
+script = ExtResource("1_pnjty")
+
+[node name="BodyMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_qvie4")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vfgjw")
+
+[node name="HeadMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.492135, 0, 0, 0, 0.260144, 0, 0, 0, 0.652839, -0.32953, 0.513848, 0)
+mesh = SubResource("BoxMesh_54in8")
+skeleton = NodePath("../BodyMesh")
+surface_material_override/0 = SubResource("StandardMaterial3D_icpc8")
+
+[node name="PlayerCamera" type="Camera3D" parent="HeadMesh"]
+transform = Transform3D(-6.69558e-08, 0, 2.03196, 0, 3.84402, 0, -1.53177, 0, -5.04738e-08, 0, 0, 0)
